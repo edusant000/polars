@@ -39,13 +39,13 @@ RUN apt-get -y install git
 COPY dev_environment.yml /app/dev_environment.yml
 RUN conda env update --name base --file /app/dev_environment.yml
 # No es necesario copiar, pues el dev usa un volumn montado ../app:/app
-#COPY app.py /app/app.py
+#COPY polars.py /app/polars.py
 ENTRYPOINT ["conda", "run","-n", "base", "jupyter", "lab","--ip=0.0.0.0","--allow-root", "--NotebookApp.token=''","--NotebookApp.password=''", "--browser=False", "--allow_remote_access=true"]
 
 
 # Target de prod
 FROM base as prod
 # Porque repito este COPY?
-COPY app.py /app/app.py
-CMD ["python", "-u", "app.py"]
+COPY polars.py /app/polars.py
+CMD ["python", "-u", "polars.py"]
 #ENTRYPOINT [ "/bin/bash" ]
