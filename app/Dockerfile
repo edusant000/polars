@@ -26,8 +26,6 @@ RUN conda update -n base -c defaults conda
 
 # Instalar librerias necesarias
 WORKDIR /app
-COPY requirements.txt /app/requirements.txt
 COPY environment.yml /app/environment.yml
-RUN conda env update --name base --f /app/environment.yml
-RUN pip install -r requirements.txt
-ENTRYPOINT ["conda", "run","-n", "base", "jupyter", "lab","--ip=0.0.0.0","--allow-root", "--NotebookApp.token=''","--NotebookApp.password=''", "--browser=False", "--allow_remote_access=true"]
+RUN conda env update --name base --f /app/environment.yml --verbose
+ENTRYPOINT ["conda", "run","-n", "base", "jupyter", "lab","--ip=0.0.0.0","--allow-root", "--NotebookApp.token=''","--NotebookApp.password=''"]
