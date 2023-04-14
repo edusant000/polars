@@ -8,7 +8,6 @@ services:
     # Construye el docker especificado en esa carpeta
     build: 
       context: ./app/
-      target: dev
     container_name: polars_app
     # Ejecutar hasta que el servicio exista
     ports:
