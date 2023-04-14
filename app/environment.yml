@@ -1,5 +1,6 @@
 channels:
   - defaults
+  - conda-forge
 dependencies:
   - pip
   - python=3.9
@@ -7,3 +8,4 @@ dependencies:
   - polars
   - numpy
   - matplotlib
+  - jupyter
