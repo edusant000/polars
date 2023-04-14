@@ -30,22 +30,4 @@ COPY requirements.txt /app/requirements.txt
 COPY environment.yml /app/environment.yml
 RUN conda env update --name base --f /app/environment.yml
 RUN pip install -r requirements.txt
-
-# Target para development
-FROM base as dev
-
-RUN apt-get -y update
-RUN apt-get -y install git
-COPY dev_environment.yml /app/dev_environment.yml
-RUN conda env update --name base --file /app/dev_environment.yml
-# No es necesario copiar, pues el dev usa un volumn montado ../app:/app
-#COPY polars.py /app/polars.py
 ENTRYPOINT ["conda", "run","-n", "base", "jupyter", "lab","--ip=0.0.0.0","--allow-root", "--NotebookApp.token=''","--NotebookApp.password=''", "--browser=False", "--allow_remote_access=true"]
-
-
-# Target de prod
-FROM base as prod
-# Porque repito este COPY?
-COPY polars.py /app/polars.py
-CMD ["python", "-u", "polars.py"]
-#ENTRYPOINT [ "/bin/bash" ]
