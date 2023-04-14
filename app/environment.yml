@@ -3,9 +3,10 @@ channels:
   - conda-forge
 dependencies:
   - pip
-  - python=3.9
   - pandas
   - polars
   - numpy
   - matplotlib
-  - jupyter
+  - jupyterlab
+  - notebook
+
