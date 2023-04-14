@@ -2,12 +2,9 @@ channels:
   - defaults
 dependencies:
   - pip
-  - pandas
   # - polars
-  - numpy
   - matplotlib
   - jupyterlab
   # - notebook
-
-- pip: 
-  - polars
+#- pip: 
+#  - polars
