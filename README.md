@@ -5,8 +5,8 @@
 
  ## Algunas de las características clave de Polars incluyen:
 
- Operaciones rápidas y paralelizadas
- Estructuras de datos eficientes en memoria
- Soporte para leer y escribir datos en una variedad de formatos, incluyendo CSV, Parquet y Arrow
- Soporte integrado para tareas comunes de manipulación de datos, como uniones, agrupaciones y filtrado
- Integración con NumPy y Pandas
+ * Operaciones rápidas y paralelizadas
+ * Estructuras de datos eficientes en memoria
+ * Soporte para leer y escribir datos en una variedad de formatos, incluyendo CSV, Parquet y Arrow
+ * Soporte integrado para tareas comunes de manipulación de datos, como uniones, agrupaciones y filtrado
+ * Integración con NumPy y Pandas
